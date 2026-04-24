@@ -1,9 +1,15 @@
+using mf_dev_backend_2023.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 // Atualização de informação em tempo real.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
