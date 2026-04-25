@@ -21,10 +21,13 @@ namespace mf_dev_backend_2023.Models
         [Required(ErrorMessage = "O placa do veículo é obrigatória.")]
         public string Placa { get; set; }
 
-        [Required(ErrorMessage = "O ano de fabricação do veículo é obrigatória.")]
+        [Required(ErrorMessage = "O ano de fabricação do veículo é obrigatório.")]
+//Display abaixo cruza informação com o dysplay do Index e exibe o nome que queira no cabeçalho da tabela
+        [Display(Name = "Ano de Fabricação")]
         public int AnoFabricacao { get; set; }
 
         [Required(ErrorMessage = "O ano do modelo do veículo é obrigatório.")]
+        [Display(Name = "Ano Modelo")]
         public int AnoModelo { get; set; }
     }
 }
