@@ -29,7 +29,9 @@ namespace mf_dev_backend_2023.Models
         [Required(ErrorMessage = "O ano do modelo do veículo é obrigatório.")]
         [Display(Name = "Ano Modelo")]
         public int AnoModelo { get; set; }
-    }
+
+        public ICollection<Consumo> Consumos { get; set; }
+        }
 }
 
 // Após criar a classe e seus atributos é necessário realizar a impedância entre a classe e o banco de dados, para isso é necessário criar um arquivo de migração.
